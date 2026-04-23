@@ -1,0 +1,42 @@
+//  Ques: Create abstract class Employee
+// method: calculateSalary()
+// Create:
+// FullTimeEmployee (salary = fixed)
+// PartTimeEmployee (salary = hours × rate)
+// -Print salary for both
+abstract class Employee{
+    abstract void calculateSalary();
+}
+class FullTimeEmployee extends Employee{
+    int salary = 50;
+    //contructor
+    // FullTimeEmployee(int s){
+    //     salary = s;
+    // }
+    void calculateSalary(){
+        System.out.println("Full Time Salary"+" "+salary);
+    }
+}
+class PartTimeEmployee extends Employee{
+    int hours = 2;
+    int rate = 200;
+    //contructor 
+    // PartTimeEmployee(int h , int r){
+    //     int hours = h;
+    //     int rate = r;
+    // }
+    void calculateSalary(){
+        System.out.println("Part Time Salary"+" "+(hours*rate));
+    }
+}
+public class Exception {
+    public static void main(String[] args) {
+        Employee e;
+
+        e = new FullTimeEmployee();
+        e.calculateSalary();
+
+        e = new PartTimeEmployee();
+        e.calculateSalary();
+    }
+}
